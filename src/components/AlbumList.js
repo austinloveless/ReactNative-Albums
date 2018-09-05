@@ -1,5 +1,6 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, ScrollView } from "react-native";
+import AlbumDetail from "./AlbumDetail";
 
 class AlbumList extends React.Component {
   constructor(props) {
@@ -17,12 +18,12 @@ class AlbumList extends React.Component {
 
   renderAlbums() {
     return this.state.albums.map(album => (
-      <Text key={album.title}>{album.title}</Text>
+      <AlbumDetail key={album.title} album={album} />
     ));
   }
 
   render() {
-    return <View>{this.renderAlbums()}</View>;
+    return <ScrollView>{this.renderAlbums()}</ScrollView>;
   }
 }
 
